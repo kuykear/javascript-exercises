@@ -1,14 +1,15 @@
-const removeFromArray = function() {
-    let array = [1,2,3,4];
-    let deletion = [2,3];
+const removeFromArray = function (...args) {
+    const array = args[0];
+    const newArray = [];
 
-    array = array.filter(item => !deletion.includes(item));
-
-    console.log(array);
-    return array;
-};
-
-removeFromArray();
+    array.forEach((item) => {
+      if (!args.includes(item)) {
+        newArray.push(item);
+      }
+    });
+    
+    return newArray;
+  };
 
 // Do not edit below this line
 module.exports = removeFromArray;
